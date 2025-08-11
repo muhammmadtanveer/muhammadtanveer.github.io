@@ -1,0 +1,281 @@
+# Creating a ready-to-upload ZIP with an index.html file for GitHub Pages.
+# The HTML is the "Services / Core Offering" page we prepared earlier.
+content = r"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — SocialVibe Solutions</title>
+  <meta name="description" content="White-label social media posting for agencies managing 30–50+ furniture store accounts. Daily posting, graphic design, video editing, ad creatives." />
+
+  <!-- Simple CSS — tweak colors as needed -->
+  <style>
+    :root{
+      --primary:#0A2E4E; /* navy */
+      --accent:#D4AF37;  /* gold */
+      --muted:#6b7280;
+      --maxw:1100px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:#0b1220; line-height:1.5; -webkit-font-smoothing:antialiased}
+    a{color:var(--primary); text-decoration:none}
+    header{background:#fff; border-bottom:1px solid #eef2f7; position:sticky; top:0; z-index:20}
+    .nav{max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:18px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .brand img{height:42px; width:auto; border-radius:8px; object-fit:contain}
+    .btn{background:var(--primary); color:#fff; padding:10px 14px; border-radius:10px; font-weight:600}
+    .container{max-width:var(--maxw); margin:48px auto; padding:0 20px}
+    .hero{display:grid; grid-template-columns:1fr; gap:22px; align-items:center; padding:36px; background:linear-gradient(180deg, rgba(10,46,78,0.03), #fff); border-radius:var(--radius); border:1px solid #f1f5f9}
+    .hero h1{font-size:28px; margin:0; color:var(--primary)}
+    .hero p{margin:0; color:var(--muted)}
+    .cta-row{display:flex; gap:12px; margin-top:12px}
+    .feature-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px; margin-top:28px}
+    .card{background:#fff; border-radius:12px; padding:18px; border:1px solid #eef2f7; box-shadow: 0 6px 18px rgba(12,18,30,0.04)}
+    .card h3{margin:0 0 8px 0; color:var(--primary)}
+    .small{color:var(--muted); font-size:14px}
+    .add-ons{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
+    .pill{background:#fff8e6; color:#6b4f0b; padding:8px 12px; border-radius:999px; font-weight:600; border:1px solid rgba(212,175,55,0.15)}
+    .process{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-top:20px}
+    .process .step{background:linear-gradient(180deg, #fff, #fbfbfc); padding:16px; border-radius:10px; border:1px solid #f0f3f6}
+    .samples{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:16px}
+    .sample img{width:100%; height:160px; object-fit:cover; border-radius:8px; display:block}
+    footer{padding:28px 0; background:#fff; border-top:1px solid #eef2f7; margin-top:40px}
+    .flex{display:flex; gap:12px; align-items:center}
+    @media(min-width:900px){
+      .hero{grid-template-columns:1fr 420px}
+      .hero h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <!-- Replace src with your logo -->
+        <img src="https://via.placeholder.com/160x42?text=SocialVibe" alt="SocialVibe Solutions logo">
+        <div>
+          <div style="font-weight:700; color:var(--primary)">SocialVibe Solutions</div>
+          <div style="font-size:12px; color:var(--muted)">White-label posting for furniture agencies</div>
+        </div>
+      </div>
+
+      <nav class="flex">
+        <!-- Replace calendly link below -->
+        <a class="btn" href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" rel="noopener">Book Intro Call</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <h1 id="hero-heading">White-label Daily Posting for Agencies Managing 30–50+ Furniture Accounts</h1>
+        <p class="small" style="margin-top:12px">
+          We handle the daily posting grind so your agency can scale without stretching internal resources. Consistent feeds, on-brand visuals, and video-ready content — delivered at volume.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn" href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" rel="noopener">Book a 15-min Call</a>
+          <a href="#samples" style="display:inline-flex;align-items:center;padding:10px 14px;border-radius:10px;border:1px solid #eef2f7;font-weight:600">View Samples</a>
+        </div>
+
+        <div style="margin-top:18px" class="small">
+          <strong>Core focus:</strong> Daily social media posting. Add-ons: design, video editing, ad creative support.
+        </div>
+      </div>
+
+      <!-- Right Column: Quick Stats / Visual -->
+      <aside class="card" aria-hidden="true" style="text-align:center;">
+        <div style="font-size:40px; font-weight:800; color:var(--primary)">50+</div>
+        <div style="margin-top:6px; font-weight:700">Accounts managed daily</div>
+        <p class="small" style="margin-top:8px">Proven processes, structured calendars, and a dedicated production team to handle large account volumes.</p>
+
+        <div style="margin-top:14px" class="add-ons">
+          <span class="pill">Daily Posting</span>
+          <span class="pill">Design</span>
+          <span class="pill">Video</span>
+          <span class="pill">Ads</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Our Core Service -->
+    <section style="margin-top:28px" aria-labelledby="core-heading">
+      <h2 id="core-heading">Your High-Volume Posting Partner</h2>
+      <p class="small" style="margin-top:8px">
+        We specialize in managing daily social media posting across dozens of furniture store accounts. From product showcases to clearance promos, we create posts that keep feeds active and customers coming to the showroom.
+      </p>
+
+      <div class="feature-grid" style="margin-top:18px">
+        <div class="card">
+          <h3>Daily Content Calendars</h3>
+          <p class="small">Planned monthly calendars per account — captions, hashtags, scheduling times optimized for performance.</p>
+        </div>
+
+        <div class="card">
+          <h3>Caption & Copy</h3>
+          <p class="small">Sales-first, product-first captions that drive showroom visits, leads, and DM inquiries.</p>
+        </div>
+
+        <div class="card">
+          <h3>Scheduling & Publishing</h3>
+          <p class="small">We schedule across platforms (Instagram, Facebook), handling posting and basic account maintenance.</p>
+        </div>
+
+        <div class="card">
+          <h3>Quality Assurance</h3>
+          <p class="small">Brand templates, post-checks, and content reviews to ensure every account stays on-brand.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add-On Services -->
+    <section style="margin-top:36px" aria-labelledby="addons-heading">
+      <h2 id="addons-heading">More Than Just Posting</h2>
+      <p class="small" style="margin-top:8px">Graphic design, short-form video editing, and ad creative support are available as add-ons when your clients need them.</p>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+        <div class="card" style="flex:1; min-width:240px">
+          <h3>Graphic Design</h3>
+          <p class="small">Polished post templates, carousel layouts, and promotional banners tailored to furniture retail.</p>
+        </div>
+
+        <div class="card" style="flex:1; min-width:240px">
+          <h3>Video Editing</h3>
+          <p class="small">Short-form reels and promo clips optimized for Instagram and Facebook that increase engagement and conversions.</p>
+        </div>
+
+        <div class="card" style="flex:1; min-width:240px">
+          <h3>Ad Creative Support</h3>
+          <p class="small">Ad-ready visuals and variant creatives built to improve CTR and lower CPA for furniture campaigns.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Agencies Choose Us -->
+    <section style="margin-top:36px" aria-labelledby="why-heading">
+      <h2 id="why-heading">Why Agencies Trust SocialVibe Solutions</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:14px">
+        <div class="card">
+          <h3>Built for Scale</h3>
+          <p class="small">Processes and production workflows built to reliably deliver hundreds of posts per month.</p>
+        </div>
+        <div class="card">
+          <h3>Furniture Expertise</h3>
+          <p class="small">We know product posts, showroom promos, and clearance-focused content that converts buyers.</p>
+        </div>
+        <div class="card">
+          <h3>White-Label Partner</h3>
+          <p class="small">We work behind your brand — you keep client relationships and ownership of outcomes.</p>
+        </div>
+        <div class="card">
+          <h3>Proven Reliability</h3>
+          <p class="small">On-time delivery, consistent quality checks, and transparent communication for agency teams.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section style="margin-top:36px" aria-labelledby="process-heading">
+      <h2 id="process-heading">Our Simple 4-Step Process</h2>
+      <div class="process" style="margin-top:12px">
+        <div class="step">
+          <strong>1. You Share</strong>
+          <p class="small" style="margin-top:6px">Brand guidelines, product images, must-run promos, and posting windows.</p>
+        </div>
+        <div class="step">
+          <strong>2. We Plan</strong>
+          <p class="small" style="margin-top:6px">We create monthly calendars for each account and share for approval.</p>
+        </div>
+        <div class="step">
+          <strong>3. We Create & Schedule</strong>
+          <p class="small" style="margin-top:6px">Design, captions, hashtags, and publish — daily, reliable posting.</p>
+        </div>
+        <div class="step">
+          <strong>4. You Deliver Results</strong>
+          <p class="small" style="margin-top:6px">Your clients see consistent activity and increased engagement — without extra work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Samples -->
+    <section id="samples" style="margin-top:36px" aria-labelledby="samples-heading">
+      <h2 id="samples-heading">Work Samples</h2>
+      <p class="small" style="margin-top:6px">Click any image to open the full-size sample. Visit our full portfolio on Google Drive for more examples.</p>
+
+      <div class="samples" style="margin-top:12px">
+        <!-- Replace images with your own thumbnails or Google Drive preview links -->
+        <a class="sample card" href="https://drive.google.com/drive/folders/YOUR-FOLDER" target="_blank" rel="noopener">
+          <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Furniture carousel example">
+          <div style="padding-top:8px; font-weight:700; color:var(--primary)">Product Carousel — Living Room</div>
+          <div class="small" style="margin-top:6px">Carousel layout and caption designed to boost showroom visits.</div>
+        </a>
+
+        <a class="sample card" href="https://drive.google.com/drive/folders/YOUR-FOLDER" target="_blank" rel="noopener">
+          <img src="https://images.pexels.com/photos/1866147/pexels-photo-1866147.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Promo post example">
+          <div style="padding-top:8px; font-weight:700; color:var(--primary)">Clearance Promo Post</div>
+          <div class="small" style="margin-top:6px">Design built for high urgency and conversions.</div>
+        </a>
+
+        <a class="sample card" href="https://drive.google.com/drive/folders/YOUR-FOLDER" target="_blank" rel="noopener">
+          <img src="https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Video thumbnail">
+          <div style="padding-top:8px; font-weight:700; color:var(--primary)">Short Reels — Product Showcase</div>
+          <div class="small" style="margin-top:6px">Short-form edit optimized for Instagram engagement.</div>
+        </a>
+      </div>
+
+      <p class="small" style="margin-top:12px">Full portfolio: <a href="https://drive.google.com/drive/folders/YOUR-FOLDER" target="_blank" rel="noopener">Google Drive — SocialVibe Solutions</a></p>
+    </section>
+
+    <!-- About & CTA -->
+    <section style="margin-top:36px" aria-labelledby="about-heading">
+      <h2 id="about-heading">Meet SocialVibe Solutions</h2>
+      <p class="small" style="margin-top:8px">
+        I’m <strong>Muhammad Tanveer</strong>, founder of SocialVibe Solutions. My team and I help agencies manage high-volume social media posting for furniture stores — delivering consistent content, attractive visuals, and video edits so your clients look active and sell more.
+      </p>
+
+      <div style="display:flex; gap:12px; margin-top:14px; align-items:center; flex-wrap:wrap">
+        <a class="btn" href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" rel="noopener">Book Intro Call</a>
+        <a href="mailto:muhammad@socialvibesolutions.com" class="small">muhammad@socialvibesolutions.com</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+      <div style="font-size:14px; color:var(--muted)">&copy; <span id="yr"></span> SocialVibe Solutions — White-label social posting for agencies</div>
+      <div style="display:flex; gap:12px; align-items:center">
+        <a class="small" href="https://drive.google.com/drive/folders/YOUR-FOLDER" target="_blank" rel="noopener">Portfolio</a>
+        <a class="small" href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" rel="noopener">Book Call</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tiny script for year -->
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+"""
+
+# write index.html to /mnt/data
+path = "/mnt/data/index.html"
+with open(path, "w", encoding="utf-8") as f:
+    f.write(content)
+
+# create a zip
+import zipfile
+zip_path = "/mnt/data/socialvibe-github-site.zip"
+with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+    zf.write(path, arcname="index.html")
+
+zip_path
+
